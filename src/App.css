@@ -1,5 +1,4 @@
 #root {
-  text-align: center;
 }
 
 .palagotchiSpriteSelector {
@@ -34,18 +33,55 @@
   display: flex;
   flex-direction: row;
   align-content: center;
-  justify-content: center;
+  justify-content: space-evenly;
   text-align: center;
 }
 
-.game-container {
-  width: 90vw;
-  height: 90vh;
+.NavbarButton {
+  font-size: 24px;
+}
+
+.palagotchiNameTitle {
+  text-align: center;
+  font-size: 44px;
+}
+
+.statDisplay-container {
+  height: 80vh;
   display: flex;
   flex-direction: column;
+  background: lightblue;
+  margin-left: 1rem;
   align-items: center;
   justify-content: center;
-  background: #f0f0f0;
+}
+
+.HP-text,
+.Hunger-text,
+.Happiness-text {
+  width: 100%;
+  border: 0.1rem solid black;
+  color: black;
+  font-size: 30px;
+}
+
+.HP-icon,
+.Hunger-icon,
+.Happiness-icon {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  color: black;
+  font-size: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-container {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
 }
 
@@ -67,6 +103,30 @@
   max-width: 150px;
   max-height: 150px;
   animation: bounce 1s infinite alternate;
+}
+
+.HP-icon {
+  font-size: 100px;
+  background: linear-gradient(to top, red var(--hp), white var(--hp));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.Hunger-icon {
+  font-size: 100px;
+  background: linear-gradient(to top, white var(--hungry), red var(--hungry));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.Happiness-icon {
+  font-size: 100px;
+  background: linear-gradient(to top, red var(--happi), white var(--happi));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 @keyframes bounce {
