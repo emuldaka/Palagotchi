@@ -1,4 +1,5 @@
 #root {
+  user-select: none;
 }
 
 .palagotchiSpriteSelector {
@@ -91,17 +92,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: lightblue;
+  background: lightblue; /* Default background color */
   border: 2px solid black;
   position: relative;
   overflow: hidden;
 }
 
+.sprite-container.dark {
+  background: black;
+}
+
 .sprite {
   width: 50%;
   height: 50%;
-  max-width: 150px;
-  max-height: 150px;
+  max-width: 550px;
+  max-height: 550px;
   animation: bounce 1s infinite alternate;
 }
 
@@ -115,7 +120,7 @@
 
 .Hunger-icon {
   font-size: 100px;
-  background: linear-gradient(to top, white var(--hungry), red var(--hungry));
+  background: linear-gradient(to top, red var(--hungry), white var(--hungry));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -127,6 +132,37 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+.light-switch {
+  position: absolute;
+  top: 10px; /* Adjust as needed */
+  right: 10px; /* Adjust as needed */
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10; /* Ensure it's above other elements */
+}
+
+.light-switch:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s;
+}
+
+.pizza-emoji {
+  position: absolute;
+  font-size: 2rem;
+  animation: moveAcross 5s linear infinite;
+}
+
+@keyframes moveAcross {
+  0% {
+    left: -10%;
+  }
+  100% {
+    left: 100%;
+  }
 }
 
 @keyframes bounce {

@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { GiHealthNormal } from "react-icons/gi";
-import { IoFastFoodSharp } from "react-icons/io5";
-import { RiEmotionHappyFill } from "react-icons/ri";
 
 function StatDisplay({ type }) {
   const [HP, setHP] = useState(75);
-  const [hunger, setHunger] = useState(5);
-  const [happiness, setHappiness] = useState(100);
+  const [hunger, setHunger] = useState(60);
+  const [happiness, setHappiness] = useState(50);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -20,7 +17,7 @@ function StatDisplay({ type }) {
   if (type === "Health") {
     return (
       <>
-        <div className="HP-text">{HP} HP</div>
+        <div className="HP-text">{HP}% HP</div>
         <div className="HP-icon" style={{ "--hp": `${HP}%` }}>
           ❤️
         </div>
@@ -29,7 +26,7 @@ function StatDisplay({ type }) {
   } else if (type === "Hunger") {
     return (
       <>
-        <div className="Hunger-text">{hunger} HUNGER</div>
+        <div className="Hunger-text">{hunger}% STARVATION</div>
         <div className="Hunger-icon" style={{ "--hungry": `${hunger}%` }}>
           🍕
         </div>
@@ -38,7 +35,7 @@ function StatDisplay({ type }) {
   } else if (type === "Happiness") {
     return (
       <>
-        <div className="Happiness-text">{happiness} HAPPINESS</div>
+        <div className="Happiness-text">{happiness}% HAPPINESS</div>
         <div className="Happiness-icon" style={{ "--happi": `${happiness}%` }}>
           😀
         </div>
